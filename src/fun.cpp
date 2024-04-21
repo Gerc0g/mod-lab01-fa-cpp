@@ -3,15 +3,15 @@
 #include <cctype>
 
 unsigned int faStr1(const char *str) {
-    unsigned int count = 0;  
-    bool inWord = false;     
+    unsigned int count = 0;
+    bool inWord = false;
 
-    while (*str) { 
-        if (isspace(*str)) { 
-            inWord = false; 
-        } else { 
-            if (!inWord) { 
-                inWord = true; 
+    while (*str) {
+        if (isspace(*str)) {
+            inWord = false;
+        } else {
+            if (!inWord) {
+                inWord = true;
                 const char *temp = str;
                 bool hasDigit = false;
                 while (*temp && !isspace(*temp)) {
@@ -21,10 +21,10 @@ unsigned int faStr1(const char *str) {
                     }
                     temp++;
                 }
-                if (!hasDigit) count++; 
+                if (!hasDigit) count++;
             }
         }
-        str++; 
+        str++;
     }
 
     return count;
@@ -74,7 +74,7 @@ unsigned int faStr3(const char *str) {
             wordLength++;
         }
         str++;
-    }   
+    }
 
     if (wordLength > 0) {
         totalLength += wordLength;
